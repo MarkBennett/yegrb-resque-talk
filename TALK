@@ -1,0 +1,194 @@
+
+
+
+
+
+            ______
+            | ___ \                          
+            | |_/ /___  ___  __ _ _   _  ___ 
+            |    // _ \/ __|/ _` | | | |/ _ \
+            | |\ \  __/\__ \ (_| | |_| |  __/
+            \_| \_\___||___/\__, |\__,_|\___|
+                               | |           
+                               |_|           
+
+
+
+                                                        A simple Ruby job queue
+
+                                                        by @MarkBennett
+                                                           http://burmis.ca
+
+
+
+Resque is a Redis-backed library for creating background jobs, placing those jobs on queues, and processing them later.  Open sourced by GitHub in Nov 2009.
+
+Similair to:
+
+ * Amazon Simple Queue Service
+ * Delayed Job
+ * Background Job
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Key Characteristics
+
+ * Persistent
+ * Low-latency
+ * Multiple prioritized queues
+
+
+I'm using Resque to build a notification queue for a new application I'm working on.  Github uses it for running all their background jobs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is Resque?
+
+ * A Ruby library, for creating, querying, and processing jobs
+ * A Rake task, for starting a worker which processes jobs
+ * A Sinatra app, for monitoring queues, jobs, and workers
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Installing Resque
+
+Step 1: Install Redis
+
+ * Resque requires Redis 0.900 or higher
+
+On OS X:
+
+ $ brew install redis
+ $ redis-server /usr/local/etc/redis.conf
+
+On Ubuntu (10.04):
+
+ $ sudo apt-get install redis-server
+ $ sudo vim /etc/redis/redis.conf
+ $ sudo /etc/init.d/redis-server start
+
+
+
+
+
+
+Step 2: Install Resque
+
+ $ gem install resque
+
+Optionally:
+
+ $ gem install rack
+
+AND DONE!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Putting it all together...
+
+
+
+           _____  _____ _   _______  _____  _____    _____ ___________ _____ 
+          /  ___||  _  | | | | ___ \/  __ \|  ___|  /  __ \  _  |  _  \  ___|
+          \ `--. | | | | | | | |_/ /| /  \/| |__    | /  \/ | | | | | | |__  
+           `--. \| | | | | | |    / | |    |  __|   | |   | | | | | | |  __| 
+          /\__/ /\ \_/ / |_| | |\ \ | \__/\| |___   | \__/\ \_/ / |/ /| |___ 
+          \____/  \___/ \___/\_| \_| \____/\____/    \____/\___/|___/ \____/
+
+
+
+
+
+
+
+
+
+
+
+
+
+Links:
+
+ * This talk is at (http://github.com/MarkBennett/yegrb-resque-talk)
+
+ * Resque homepage (http://github.com/defunkt/resque)
+ * Redis homepage (http://code.google.com/p/redis)
+ * GitHub Resque announcement (http://github.com/blog/542-introducing-resque)
+ * ASCII text generator (http://www.network-science.de/ascii/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             _____ _   _ _____ _____ _____ _____ _____ _   _  _____ ___  
+            |  _  | | | |  ___/  ___|_   _|_   _|  _  | \ | |/  ___|__ \ 
+            | | | | | | | |__ \ `--.  | |   | | | | | |  \| |\ `--.   ) |
+            | | | | | | |  __| `--. \ | |   | | | | | | . ` | `--. \ / / 
+            \ \/' / |_| | |___/\__/ / | |  _| |_\ \_/ / |\  |/\__/ /|_|  
+             \_/\_\\___/\____/\____/  \_/  \___/ \___/\_| \_/\____/ (_)  
+
+
+
+
+
+
+
+
