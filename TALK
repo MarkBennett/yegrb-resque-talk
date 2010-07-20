@@ -23,13 +23,13 @@
 
 Resque is a Redis-backed library for creating background jobs, placing those jobs on queues, and processing them later.  Open sourced by GitHub in Nov 2009.
 
+Pronounced, "Rescue".
+
 Similair to:
 
  * Amazon Simple Queue Service
  * Delayed Job
  * Background Job
-
-
 
 
 
@@ -175,22 +175,43 @@ Go to:
 
 What's happening here?
 
+
  * define jobs in jobs.rb
 
-   - a job defines @queue and Job#perform()
+     a job defines @queue and Job#perform()
+
 
 
  * Sinatra app queues up jobs
    
-   Resque.enqueue(Job, params)
+     Resque.enqueue(Job, args)
+
+
+
+
+
+
+
+
 
 
  * Worker processes jobs automatically
 
+     klass, args = Resque.reserve(:file_serve)
+     klass.perform(*args) if klass.respond_to? :perform
+
 
  * Resque includes a rack app to monitor jobs, workers, and queues
 
-   http://localhost:9292/resque/
+     http://localhost:9292/resque/
+
+
+
+
+
+
+
+
 
 
 
