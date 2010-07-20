@@ -151,6 +151,49 @@ Putting it all together...
 
 
 
+Start up the web server:
+
+ $ rake start
+
+
+
+Start up a resque worker:
+
+ $ VERBOSE=true QUEUE=defaut rake resque:work
+
+
+Go to:
+
+ http://localhost:9292/
+
+
+
+
+
+
+
+
+What's happening here?
+
+ * define jobs in jobs.rb
+
+   - a job defines @queue and Job#perform()
+
+
+ * Sinatra app queues up jobs
+   
+   Resque.enqueue(Job, params)
+
+
+ * Worker processes jobs automatically
+
+
+ * Resque includes a rack app to monitor jobs, workers, and queues
+
+   http://localhost:9292/resque/
+
+
+
 
 
 Links:
