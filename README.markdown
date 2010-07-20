@@ -7,7 +7,7 @@ The demo code used in this talk is taken from [the Resque repo](http://github.co
 
 Links
 -----
- * Resque homepage (http://github.com/defunkt/resque)
- * Redis homepage (http://code.google.com/p/redis)
- * GitHub Resque announcement (http://github.com/blog/542-introducing-resque)
- * ASCII text generator (http://www.network-science.de/ascii/)
+ * [Resque homepage](http://github.com/defunkt/resque)
+ * [Redis homepage](http://code.google.com/p/redis)
+ * [GitHub Resque announcement](http://github.com/blog/542-introducing-resque)
+ * [ASCII text generator](http://www.network-science.de/ascii/)
